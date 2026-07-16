@@ -7,17 +7,24 @@ sections, tracks task boxes, and checks local links—all without leaving the CL
 It is built for research notes, implementation plans, reports, and documentation
 produced alongside tools such as Codex and Claude Code.
 
-## Install for development
+## Install
 
 CLI-MD requires Node.js 20.19 or newer.
+
+```sh
+npm install --global @screamy7/cli-md
+```
+
+This installs both `md` and the collision-safe `climd` alias.
+
+## Install for development
 
 ```sh
 npm install
 npm link
 ```
 
-This installs both `md` and the collision-safe `climd` alias. You can also run the
-tool without linking it:
+You can also run the tool without linking it:
 
 ```sh
 node src/cli.js README.md

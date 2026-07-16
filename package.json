@@ -1,5 +1,5 @@
 {
-  "name": "cli-md",
+  "name": "@screamy7/cli-md",
   "version": "0.1.0",
   "description": "A terminal-native workspace for rendering, navigating, checking, and editing Markdown.",
   "type": "module",
@@ -10,6 +10,17 @@
   "files": [
     "src/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScreaMy7/CLI-MD.git"
+  },
+  "homepage": "https://github.com/ScreaMy7/CLI-MD#readme",
+  "bugs": {
+    "url": "https://github.com/ScreaMy7/CLI-MD/issues"
+  },
   "scripts": {
     "start": "node ./src/cli.js",
     "test": "node --test",
@@ -27,6 +38,7 @@
     "documentation"
   ],
   "license": "MIT",
+  "author": "ScreaMy7",
   "dependencies": {
     "chalk": "^5.6.2",
     "chokidar": "^5.0.0",
