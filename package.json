@@ -4,8 +4,8 @@
   "description": "A terminal-native workspace for rendering, navigating, checking, and editing Markdown.",
   "type": "module",
   "bin": {
-    "md": "./src/cli.js",
-    "climd": "./src/cli.js"
+    "md": "src/cli.js",
+    "climd": "src/cli.js"
   },
   "files": [
     "src/"
