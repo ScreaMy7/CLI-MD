@@ -1,0 +1,38 @@
+{
+  "name": "cli-md",
+  "version": "0.1.0",
+  "description": "A terminal-native workspace for rendering, navigating, checking, and editing Markdown.",
+  "type": "module",
+  "bin": {
+    "md": "./src/cli.js",
+    "climd": "./src/cli.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "start": "node ./src/cli.js",
+    "test": "node --test",
+    "check": "node --check ./src/cli.js",
+    "demo": "node ./src/cli.js README.md"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "keywords": [
+    "markdown",
+    "cli",
+    "terminal",
+    "tui",
+    "documentation"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "chokidar": "^5.0.0",
+    "commander": "^14.0.3",
+    "fast-glob": "^3.3.3",
+    "marked": "^15.0.12",
+    "marked-terminal": "^7.3.0"
+  }
+}
