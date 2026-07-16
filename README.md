@@ -54,6 +54,60 @@ Color is enabled for a terminal and disabled automatically in a pipe. Use
 `--color` or `--no-color` to override detection, and `--width 100` to control text
 reflow.
 
+## Use with Codex or Claude Code
+
+CLI-MD works well as the human-readable side of an agent session. Ask Codex or
+Claude Code to keep its plan, research, or report in a Markdown file, then watch
+that file from another terminal or split pane.
+
+```text
+Terminal 1                         Terminal 2
+──────────────────────────────     ──────────────────────────────
+codex                              md watch PLAN.md
+# or: claude
+
+Prompt the agent:
+"Keep your implementation plan and progress updated in PLAN.md."
+```
+
+As the agent edits `PLAN.md`, `md watch` re-renders it automatically without
+jumping to the bottom. Your scroll position is preserved, so you can continue
+reading while new content is written.
+
+For a research workflow, ask the agent to write structured files such as
+`RESEARCH.md`, `DECISIONS.md`, or `REPORT.md`, then use CLI-MD to inspect them:
+
+```sh
+# Find text in one growing document
+md search "authentication" RESEARCH.md
+
+# Search every Markdown file in the workspace
+md search "open question" .
+
+# See the document structure and source line numbers
+md toc REPORT.md
+
+# Render or extract only the section you need
+md section REPORT.md "Security findings" --render
+md section REPORT.md "Security findings" > security-context.md
+
+# Review tasks created or completed by the agent
+md tasks PLAN.md
+md tasks PLAN.md --status all
+
+# Validate links and heading references before sharing the result
+md check .
+```
+
+A practical agent workflow is:
+
+1. Ask Codex or Claude Code to use a named Markdown file as its durable work log.
+2. Run `md watch <file>` in a neighboring terminal pane for live rendering.
+3. Use `md search`, `md toc`, and `md section` to navigate large results without
+   interrupting the agent.
+4. Run `md tasks` to review outstanding work and `md check .` before committing or
+   sharing the documents.
+
 ## Navigate and inspect
 
 ```sh
